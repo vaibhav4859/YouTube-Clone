@@ -1,9 +1,9 @@
 
 
 const Watch = () => {
-    return (
-      <div>Watcj</div>
-    );
-  }
-  
-  export default Watch;
+  return (
+    <div>Watch</div>
+  );
+}
+
+export default Watch;

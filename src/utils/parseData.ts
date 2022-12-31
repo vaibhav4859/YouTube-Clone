@@ -45,7 +45,8 @@ export const parseData = async (items: any[]) => {
                 ","
             )}&key=${API_KEY}`
         );
-
+        console.log(videosData);
+        
         const parsedData: HomePageVideos[] = [];
         items.forEach(
             (
