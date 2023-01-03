@@ -113,7 +113,7 @@ const Sidebar = () => {
                 {mainLinks.map(({ icon, name }) => {
                     return (
                         <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 ${name === "Home" ? "bg-slate-600" : ""}`}>
-                            <a href="#" className="flex items-center gap-5">
+                            <a href="/" className="flex items-center gap-5">
                                 {icon}
                                 <span className="text-sm tracking-wider">{name}</span>
                             </a>
@@ -125,7 +125,7 @@ const Sidebar = () => {
                 {secondaryLinks.map(({ icon, name }) => {
                     return (
                         <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
-                            <a href="#" className="flex items-center gap-5">
+                            <a href="/" className="flex items-center gap-5">
                                 {icon}
                                 <span className="text-sm tracking-wider">{name}</span>
                             </a>
@@ -137,7 +137,7 @@ const Sidebar = () => {
                 {subscriptionLinks.map(({ icon, name }) => {
                     return (
                         <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
-                            <a href="#" className="flex items-center gap-5">
+                            <a href="/" className="flex items-center gap-5">
                                 {icon}
                                 <span className="text-sm tracking-wider">{name}</span>
                             </a>
@@ -149,7 +149,7 @@ const Sidebar = () => {
                 {helpLinks.map(({ icon, name }) => {
                     return (
                         <li key={name} className={`pl-6 py-3 hover:bg-zinc-600 `}>
-                            <a href="#" className="flex items-center gap-5">
+                            <a href="/" className="flex items-center gap-5">
                                 {icon}
                                 <span className="text-sm tracking-wider">{name}</span>
                             </a>
@@ -159,12 +159,12 @@ const Sidebar = () => {
             </ul>
             <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
                 {textLinks[0].map((name) => {
-                    return <a key={name} href="#">{name}</a>;
+                    return <a key={name} href="/">{name}</a>;
                 })}
             </ul>
             <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
                 {textLinks[1].map((name) => {
-                    return <a key={name} href="#">{name}</a>;
+                    return <a key={name} href="/">{name}</a>;
                 })}
             </ul>
             <span className="px-4 text-sm text-zinc-400">&copy; 2023 Google</span>
