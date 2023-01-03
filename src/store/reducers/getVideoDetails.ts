@@ -10,9 +10,7 @@ export const getVideoDetails = createAsyncThunk(
     async (id: string) => {
         const {
             data: { items },
-        } = await axios.get(
-            `${YOUTUBE_API_URL}/videos?key=${API_KEY}&part=snippet,statistics&type=video&id=${id}`
-        );
+        } = await axios.get(`${YOUTUBE_API_URL}/videos?key=${API_KEY}&part=snippet,statistics&type=video&id=${id}`);
 
         return parseVideosData(items[0]);
     }

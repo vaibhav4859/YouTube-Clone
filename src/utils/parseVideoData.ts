@@ -29,9 +29,7 @@ export const parseVideosData = async (item: {
                 },
             ],
         },
-    } = await axios.get(
-        `${YOUTUBE_API_URL}/channels?part=snippet,statistics&id=${item.snippet.channelId}&key=${API_KEY}`
-    );
+    } = await axios.get(`${YOUTUBE_API_URL}/channels?part=snippet,statistics&id=${item.snippet.channelId}&key=${API_KEY}`);
 
     return {
         videoId: item.id,

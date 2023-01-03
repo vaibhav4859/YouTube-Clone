@@ -14,7 +14,6 @@ const Home = () => {
   const videos = useSelector((state: RootState) => {
     return state.youtubeApp.videos;
   });
-  // console.log(videos);
 
   useEffect(() => {
     store.dispatch(getHomePageVideos(false));
@@ -31,13 +30,7 @@ const Home = () => {
       <div className="flex" style={{ height: "92.5vh" }}>
         <Sidebar />
         {videos.length ?
-          <InfiniteScroll
-            dataLength={videos.length}
-            next={() => store.dispatch(getHomePageVideos(true))}
-            hasMore={videos.length < 500}
-            loader={<Spinner />}
-            height={650}
-          >
+          <InfiniteScroll dataLength={videos.length} next={() => store.dispatch(getHomePageVideos(true))} hasMore={videos.length < 500} loader={<Spinner />} height={650}>
             <div className="grid gap-y-14 gap-x-8 grid-cols-4 p-8">
               {videos.map((item: HomePageVideos, index: number) => {
                 return <Card data={item} key={index} />;

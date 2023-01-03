@@ -22,11 +22,7 @@ export const parseRecommendedData = async (items: Item[], videoId: string) => {
 
         const {
             data: { items: videosData },
-        } = await axios.get(
-            `${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(
-                ","
-            )}&key=${API_KEY}`
-        );
+        } = await axios.get(`${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(",")}&key=${API_KEY}`);
 
         const parsedData: RecommendedVideos[] = [];
         newItems.forEach((item, index) => {

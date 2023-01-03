@@ -1,5 +1,4 @@
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
-// import { type } from "os";
 
 import { InitialState } from "../Types";
 import { getHomePageVideos } from "./reducers/getHomePageVideos";
@@ -21,8 +20,6 @@ const YoutubeSlice = createSlice({
   initialState,
   reducers: {
     clearVideos: (state) => {
-      console.log("hi");
-
       state.videos = [];
       state.nextPageToken = null;
     },
@@ -57,8 +54,5 @@ export const store = configureStore({
   }
 });
 
-// export const { clearVideos, changeSearchTerm, clearSearchTerm } = YoutubeSlice.actions;
-
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
 export const youtubeActions = YoutubeSlice.actions;

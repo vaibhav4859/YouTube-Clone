@@ -174,6 +174,3 @@ const Sidebar = () => {
 }
 
 export default Sidebar;
-
-
-// AIzaSyALUU419KFULYA9_7M7krVxBnBlG_g2htQ

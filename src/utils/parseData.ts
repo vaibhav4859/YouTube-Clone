@@ -20,11 +20,7 @@ export const parseData = async (items: any[]) => {
 
         const {
             data: { items: channelsData },
-        } = await axios.get(
-            `${YOUTUBE_API_URL}/channels?part=snippet,contentDetails&id=${channelIds.join(
-                ","
-            )}&key=${API_KEY}`
-        );
+        } = await axios.get(`${YOUTUBE_API_URL}/channels?part=snippet,contentDetails&id=${channelIds.join(",")}&key=${API_KEY}`);
 
         const parsedChannelsData: { id: string; image: string }[] = [];
         channelsData.forEach(
@@ -40,13 +36,8 @@ export const parseData = async (items: any[]) => {
 
         const {
             data: { items: videosData },
-        } = await axios.get(
-            `${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(
-                ","
-            )}&key=${API_KEY}`
-        );
-        console.log(videosData);
-        
+        } = await axios.get(`${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(",")}&key=${API_KEY}`);
+
         const parsedData: HomePageVideos[] = [];
         items.forEach(
             (

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { RootState } from "..";
+import { RootState } from "../index";
 import { RecommendedVideos } from "../../Types";
 import { parseRecommendedData } from "../../utils/parseRecommendedData";
 import { YOUTUBE_API_URL } from "../../utils/constants";
@@ -20,15 +20,9 @@ export const getRecommendedVideos = createAsyncThunk(
 
         const {
             data: { items },
-        } = await axios.get(
-            `${YOUTUBE_API_URL}/activities?key=${API_KEY}&channelId=${channelId}&part=snippet,contentDetails&maxResults=20&type=video&videoId=${videoId}`
-        );
+        } = await axios.get(`${YOUTUBE_API_URL}/activities?key=${API_KEY}&channelId=${channelId}&part=snippet,contentDetails&maxResults=20&type=video&videoId=${videoId}`);
 
-        const parsedData: RecommendedVideos[] = await parseRecommendedData(
-            items,
-            videoId
-        );
-
+        const parsedData: RecommendedVideos[] = await parseRecommendedData(items, videoId);
         return { parsedData };
     }
 );

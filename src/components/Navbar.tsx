@@ -27,6 +27,7 @@ const Navbar = () => {
             store.dispatch(getSearchPageVideos(false));
         }
     }
+
     let url: string;
     if (user) url = auth.currentUser.photoURL;
 
@@ -78,15 +79,15 @@ const Navbar = () => {
                     <span className="absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1">9+</span>
                 </div>
                 {user ? (<div className='flex mb-4 cursor-pointer mt-4' onClick={() => setShow(!show)}>
-                        <img src={url} className="w-9 h-9 rounded-full" alt="User" />
-                        {!show && <span className='rotate-90'>&#62;</span>}
-                        {show && <span className='rotate-90'>&#60;</span>}
+                    <img src={url} className="w-9 h-9 rounded-full" alt="User" />
+                    {!show && <span className='rotate-90'>&#62;</span>}
+                    {show && <span className='rotate-90'>&#60;</span>}
                 </div>)
                     : (<button className=" flex rounded-full px-2 py-1 mt-0.5 border border-white-500 text-white-500 hover:bg-zinc-600" onClick={signInWithGoogle}>
                         <BsPersonCircle className="mt-1 text-base ml-1" />
                         <span className="pl-1.5 pr-1 text-base">Sign in</span>
                     </button>)}
-                    {user && show && <span className='rounded-xl absolute mt-24 ml-20 py-2 px-4 bg-black z-50 border border-white-500 text-lg cursor-pointer' onClick={signOut}>Sign out</span>}
+                {user && show && <span className='rounded-xl absolute mt-24 ml-20 py-2 px-4 bg-black z-50 border border-white-500 text-lg cursor-pointer' onClick={signOut}>Sign out</span>}
             </div>
         </div>
     );
