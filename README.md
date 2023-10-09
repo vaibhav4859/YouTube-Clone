@@ -2,7 +2,7 @@
 
 ## Visit Youtube-clone: https://clone-88f1b.web.app/
 
-Youtube-clone is an online video sreaming app where you can watch and search any youtube video.
+Youtube-clone is an online video streaming app where you can watch and search any youtube video.
 
 It also includes <strong>INFINITE SCROLL</strong> feature which keeps on loading data while scrolling
 
